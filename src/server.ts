@@ -3,6 +3,7 @@ import { type Server } from "http";
 import mongoose from "mongoose";
 import app from "./app";
 import { envVars } from "./app/configs/envConfig";
+import { seedAdmin } from "./app/utils/seedAdmin";
 
 let server: Server;
 
@@ -21,6 +22,7 @@ const startServer = async () => {
 
 (async () => {
   startServer();
+  seedAdmin();
 })();
 
 // unhandled rejection error handler

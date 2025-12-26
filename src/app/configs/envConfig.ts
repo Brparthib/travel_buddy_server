@@ -7,7 +7,7 @@ interface EnvConfig {
   DB_URL: string;
   NODE_ENV: string;
   BCRYPT_SALT_ROUND: string;
-  ADMIN_PHONE: string;
+  ADMIN_EMAIL: string;
   ADMIN_PASSWORD: string;
   JWT: {
     JWT_ACCESS_SECRET: string;
@@ -24,19 +24,12 @@ const loadEnvVars = (): EnvConfig => {
     "DB_URL",
     "NODE_ENV",
     "BCRYPT_SALT_ROUND",
-    "ADMIN_PHONE",
+    "ADMIN_EMAIL",
     "ADMIN_PASSWORD",
-    "AGENT_PHONE",
-    "AGENT_PASSWORD",
-    "USER_PHONE",
-    "USER_PASSWORD",
     "JWT_ACCESS_SECRET",
     "JWT_ACCESS_EXPIRES",
     "JWT_REFRESH_SECRET",
     "JWT_REFRESH_EXPIRES",
-    "MINIMUM_BALANCE",
-    "CHARGE_LIMIT",
-    "PERCENTAGE_LIMIT",
     "FRONTEND_URL",
   ];
 
@@ -51,7 +44,7 @@ const loadEnvVars = (): EnvConfig => {
     DB_URL: process.env.DB_URL as string,
     NODE_ENV: process.env.NODE_ENV as string,
     BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
-    ADMIN_PHONE: process.env.ADMIN_PHONE as string,
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL as string,
     ADMIN_PASSWORD: process.env.ADMIN_PASSWORD as string,
     JWT: {
       JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,

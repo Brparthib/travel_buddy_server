@@ -30,21 +30,22 @@ export interface AuthProvider {
 }
 
 export interface IUser {
-  _id: Types.ObjectId;
+  _id?: Types.ObjectId;
   email: string;
   password: string;
   role: UserRole;
-  status: UserStatus;
+  status?: UserStatus;
   auths?: AuthProvider[];
-  fullName: string;
+  fullName?: string;
   imageUrl?: string;
   bio?: string;
-  travelInterests: string[];
-  visitedCountries: string[];
+  travelInterests?: string[];
+  visitedCountries?: string[];
   currentLocation?: UserLocation;
-  isSubscribed: boolean;
-  hasVerifiedBadge: boolean;
-  ratingSummary: UserRatingSummary;
+  isSubscribed?: boolean;
+  hasVerifiedBadge?: boolean;
+  ratingSummary?: UserRatingSummary;
+  isDeleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }

@@ -96,7 +96,6 @@ const userSchema = new Schema<IUser>(
     auths: [authProviderSchema],
     fullName: {
       type: String,
-      required: true,
       trim: true,
     },
     imageUrl: {
@@ -128,6 +127,10 @@ const userSchema = new Schema<IUser>(
     ratingSummary: {
       type: ratingSummarySchema,
       default: () => ({ avg: 0, count: 0 }),
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
     },
   },
   {
