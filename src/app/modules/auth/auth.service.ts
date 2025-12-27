@@ -16,11 +16,14 @@ const credentialsLogin = async (payload: Partial<IUser>) => {
     throw new AppError(httpStatus.NOT_FOUND, "User doesn't exist!!");
   }
 
-  const isPasswordMatched = await bcrypt.compare(
-    password as string,
-    isUserExists.password as string
-  );
-  if (!isPasswordMatched) {
+  // const isPasswordMatched = await bcrypt.compare(
+  //   password as string,
+  //   isUserExists.password as string
+  // );
+  // if (!isPasswordMatched) {
+  //   throw new AppError(httpStatus.FORBIDDEN, "Incorrect Password!!");
+  // }
+  if (isUserExists.password !== password) {
     throw new AppError(httpStatus.FORBIDDEN, "Incorrect Password!!");
   }
 
@@ -32,7 +35,7 @@ const credentialsLogin = async (payload: Partial<IUser>) => {
   return {
     accessToken: userTokens.accessToken,
     refreshToken: userTokens.refreshToken,
-    user: rest, 
+    user: rest,
   };
 };
 
