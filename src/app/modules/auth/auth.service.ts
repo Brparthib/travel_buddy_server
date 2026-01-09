@@ -35,7 +35,7 @@ const credentialsLogin = async (payload: Partial<IUser>) => {
   return {
     accessToken: userTokens.accessToken,
     refreshToken: userTokens.refreshToken,
-    user: rest,
+    user: rest, 
   };
 };
 
